@@ -1,0 +1,14 @@
+{
+  "name": "Windows Server RDP",
+  "image": "mcr.microsoft.com/devcontainers/windows/servercore:11-2022",
+  "onCreateCommand": "powershell.exe -ExecutionPolicy Bypass -File ./.devcontainer/setup-rdp.ps1",
+  "postCreateCommand": "powershell.exe -ExecutionPolicy Bypass -File ./.devcontainer/setup-user.ps1",
+  "forwardPorts": [3389],
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "ms-vscode.powershell"
+      ]
+    }
+  }
+}
