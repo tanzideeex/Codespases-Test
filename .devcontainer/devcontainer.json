@@ -1,17 +1,12 @@
 {
   "name": "Windows Server RDP",
   "image": "mcr.microsoft.com/devcontainers/windows/servercore:11-2022",
-
-  // This is the NEW and IMPORTANT part.
-  // It tells GitHub to use a Windows machine to host the Codespace.
   "hostRequirements": {
     "os": "windows"
   },
-
   "onCreateCommand": "powershell.exe -ExecutionPolicy Bypass -File ./.devcontainer/setup-rdp.ps1",
   "postCreateCommand": "powershell.exe -ExecutionPolicy Bypass -File ./.devcontainer/setup-user.ps1",
   "forwardPorts": [3389],
-  
   "customizations": {
     "vscode": {
       "extensions": [
